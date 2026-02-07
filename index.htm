@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="src/output.css" />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="relative h-screen overflow-hidden">
+      <div
+        id="default-carousel"
+        class="absolute inset-0 w-full h-full -z-10"
+        data-carousel="slide"
+      >
+        <div class="relative h-full overflow-hidden">
+          <div class="duration-700 ease-in-out" data-carousel-item="active">
+            <img
+              src="src/img/hero_bg_1.jpg"
+              class="absolute w-full h-full object-cover"
+              alt=""
+            />
+          </div>
+
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="src/img/hero_bg_2.jpg"
+              class="absolute w-full h-full object-cover"
+              alt=""
+            />
+          </div>
+
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+              src="src/img/hero_bg_3.jpg"
+              class="absolute w-full h-full object-cover"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <nav class="py-[20px] px-[10px] lg:px-0">
+        <div class="container bg-[#005555] text-white rounded-xl">
+          <div
+            class="md:hidden py-[20px] px-[30px] flex items-center justify-between"
+          >
+            <a
+              href=""
+              class="text-[24px] text-[#ffffffcc] hover:text-white duration-200"
+              >Property</a
+            >
+            <i
+              class="fa-solid fa-bars text-[30px] cursor-pointer"
+              onclick="menuOpen()"
+            ></i>
+          </div>
+          <div
+            id="menubar"
+            style="right: -100%"
+            class="mobilmenu-list transition-[right] duration-500 ease-in-out bg-white fixed top-0 right-0 h-[100%] w-[300px] z-999"
+          >
+            <div class="flex justify-end mt-5 mr-5">
+              <i
+                onclick="menuOpen()"
+                class="fa-solid fa-x text-black text-[27px] cursor-pointer"
+              ></i>
+            </div>
+            <ul class="flex flex-col justify-between text-black px-[20px]">
+              <li class="py-[10px] px-[15px] text-[14px]">
+                <a href="">Home</a>
+              </li>
+              <li class="py-[10px] px-[15px] text-[14px]">
+                <a href="">Properties</a>
+              </li>
+              <li class="py-[10px] px-[15px] text-[14px]">
+                <a href="">Services</a>
+              </li>
+              <li class="py-[10px] px-[15px] text-[14px]">
+                <a href="">About</a>
+              </li>
+              <li class="py-[10px] px-[15px] text-[14px]">
+                <a href="">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="hidden md:flex py-[20px] px-[30px] items-center justify-between"
+          >
+            <a
+              href=""
+              class="text-[24px] text-[#ffffffcc] hover:text-white duration-200"
+              >Property</a
+            >
+            <ul class="flex items-center justify-between">
+              <li class="py-[10px] px-[15px] text-[14px]">
+                <a href="">Home</a>
+              </li>
+              <li
+                class="py-[10px] px-[15px] text-[14px] text-[#ffffff80] hover:text-white duration-200"
+              >
+                <a href="">Properties</a>
+              </li>
+              <li
+                class="py-[10px] px-[15px] text-[14px] text-[#ffffff80] hover:text-white duration-200"
+              >
+                <a href="">Services</a>
+              </li>
+              <li
+                class="py-[10px] px-[15px] text-[14px] text-[#ffffff80] hover:text-white duration-200"
+              >
+                <a href="">About</a>
+              </li>
+              <li
+                class="py-[10px] px-[15px] text-[14px] text-[#ffffff80] hover:text-white duration-200"
+              >
+                <a href="">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="hero text-center h-[62vh] px-[12px] lg:px-0 text-white flex flex-col items-center justify-center"
+      >
+        <h1
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="text-[24px] lg:text-[38px] mb-[30px] font-semibold"
+        >
+          Easiest way to find your dream home
+        </h1>
+
+        <form
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="flex w-full max-w-[600px] gap-3 justify-center"
+        >
+          <input
+            type="text"
+            placeholder="Your ZIP code or City. e.g. New York"
+            class="flex-1 bg-white placeholder:text-[#6c757d] py-[15px] px-[24px] rounded-full min-w-0"
+          />
+
+          <button
+            class="bg-[#005555] py-[15px] px-[30px] rounded-full shrink-0 inline-block transition duration-300 hover:-translate-y-1"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </header>
+
+    <main>
+      <section class="py-[64px] px-[12px] lg:px-0">
+        <div class="container">
+          <div class="md:flex items-center justify-between">
+            <h2 class="text-[26px] lg:text-[36px] font-semibold mb-[18px]">
+              Popular Properties
+            </h2>
+
+            <div class="mb-[32px]">
+              <a
+                href=""
+                class="bg-[#005555] text-white py-[16px] px-[24px] rounded-4xl inline-block transition duration-300 hover:-translate-y-1"
+              >
+                View all properties
+              </a>
+            </div>
+          </div>
+
+          <div
+            id="properties"
+            class="w-full grid grid-flow-col auto-cols-[100%] md:auto-cols-[50%] lg:auto-cols-[33.333%] gap-0 md:gap-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory"
+          ></div>
+          <div class="flex items-center justify-between gap-3 mt-6">
+            <p
+              id="prev"
+              class="flex w-20 h-10 items-center justify-center bg-[#00204a1a] rounded-3xl cursor-pointer hover:bg-[#00204a] hover:text-white duration-300"
+            >
+              Prev
+            </p>
+            <p
+              id="next"
+              class="flex w-20 h-10 items-center justify-center bg-[#00204a1a] rounded-3xl cursor-pointer hover:bg-[#00204a] hover:text-white duration-300"
+            >
+              Next
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="bg-[#f2f4f6] py-[30px]">
+        <div
+          id="features"
+          class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-[24px]"
+        ></div>
+      </div>
+      <section class="pt-[64px] pb-[128px] px-[12px] lg:px-0">
+        <div class="container">
+          <div class="md:flex items-center justify-between mb-[48px]">
+            <h2 class="text-[26px] lg:text-[36px] font-semibold mb-[18px]">
+              Customer Says
+            </h2>
+
+            <div class="flex items-center gap-3 mt-6">
+              <p
+                id="prev2"
+                class="flex w-20 h-10 items-center justify-center bg-[#00204a1a] rounded-3xl cursor-pointer hover:bg-[#00204a] hover:text-white duration-300"
+              >
+                Prev
+              </p>
+              <p
+                id="next2"
+                class="flex w-20 h-10 items-center justify-center bg-[#00204a1a] rounded-3xl cursor-pointer hover:bg-[#00204a] hover:text-white duration-300"
+              >
+                Next
+              </p>
+            </div>
+          </div>
+          <div
+            id="test"
+            class="w-full grid grid-flow-col auto-cols-[100%] md:auto-cols-[50%] lg:auto-cols-[33.333%] gap-0 md:gap-6 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory"
+          ></div>
+        </div>
+      </section>
+      <section class="bg-[#f8f9fa]">
+        <div class="container py-[64px] px-[12px] lg:px-0">
+          <div class="text-center mb-[48px]">
+            <h3 class="text-[36px] font-medium text-[#00204a] mb-[24px]">
+              Let's find home that's perfect for you
+            </h3>
+            <p class="text-[#7c7c7d] text-[14px] max-w-[700px] mx-auto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              enim pariatur similique debitis vel nisi qui reprehenderit.
+            </p>
+          </div>
+
+          <div class="lg:flex justify-between gap-10 mb-[48px]">
+            <div class="lg:w-[60%] my-10 lg:mt-0 order-1 lg:order-2">
+              <img src="src/img/hero_bg_3.jpg" alt="" class="w-full" />
+            </div>
+            <div class="lg:w-[30%] order-2 lg:order-1">
+              <div class="flex gap-4 mb-[30px]">
+                <div
+                  class="w-[80px] h-[80px] bg-[#efefef] hover:border-2 hover:bg-white duration-100 flex items-center justify-center rounded-full shrink-0"
+                >
+                  <i class="fa-solid fa-house text-[#00204a]"></i>
+                </div>
+                <div>
+                  <h3 class="text-[18px] text-[#00204a] font-medium mb-[8px]">
+                    2M Properties
+                  </h3>
+                  <p class="text-[14px] text-[#7c7c7d]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum iste.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 mb-[30px]">
+                <div
+                  class="w-[80px] h-[80px] hover:border-2 hover:bg-white duration-100 bg-[#efefef] flex items-center justify-center rounded-full shrink-0"
+                >
+                  <i class="fa-solid fa-user text-[#00204a]"></i>
+                </div>
+                <div>
+                  <h3 class="text-[18px] text-[#00204a] font-medium mb-[8px]">
+                    Top Rated Agents
+                  </h3>
+                  <p class="text-[14px] text-[#7c7c7d]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum iste.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div
+                  class="w-[80px] h-[80px] hover:border-2 hover:bg-white duration-100 bg-[#efefef] flex items-center justify-center rounded-full shrink-0"
+                >
+                  <i class="fa-solid fa-shield text-[#00204a]"></i>
+                </div>
+                <div>
+                  <h3 class="text-[18px] text-[#00204a] font-medium mb-[8px]">
+                    Legit Properties
+                  </h3>
+                  <p class="text-[14px] text-[#7c7c7d]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum iste.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 lg:grid-cols-4">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="mx-[12px] flex flex-col mb-[48px]"
+            >
+              <span class="text-[40px] text-[#00204a] font-bold">3,298</span>
+              <span class="text-[14px] text-[#00000080]"
+                ># of Buy Properties</span
+              >
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="mx-[12px] flex flex-col mb-[48px]"
+            >
+              <span class="text-[40px] text-[#00204a] font-bold">2,181</span>
+              <span class="text-[14px] text-[#00000080]"
+                ># of Sell Properties</span
+              >
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="mx-[12px] flex flex-col mb-[48px]"
+            >
+              <span class="text-[40px] text-[#00204a] font-bold">9,316</span>
+              <span class="text-[14px] text-[#00000080]"
+                ># of All Properties</span
+              >
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="mx-[12px] flex flex-col mb-[48px]"
+            >
+              <span class="text-[40px] text-[#00204a] font-bold">7,191</span>
+              <span class="text-[14px] text-[#00000080]"># of Agents</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white text-center py-[64px]">
+          <h3
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="mb-[24px] text-[25px] lg:text-[30px] text-[#00204a] font-semibold"
+          >
+            Be a part of our growing real state agents
+          </h3>
+          <a
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            href=""
+            class="bg-[#005555] mb-[16px] text-white py-[16px] px-[24px] rounded-4xl inline-block transition duration-300 hover:-translate-y-1"
+          >
+            Apply for Real Estate agent
+          </a>
+        </div>
+      </section>
+      <section class="py-[64px] px-[12px] lg:px-0 bg-[#f8f9fa]">
+        <div class="container">
+          <div class="mb-[48px] text-center">
+            <div class="pb-[48px]">
+              <h3 class="text-[36px] text-[#00204a]">Our Agents</h3>
+              <p class="text-[#7c7c7d] text-[14px]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+                enim pariatur similique debitis vel nisi qui reprehenderit
+                totam? Quod maiores.
+              </p>
+            </div>
+          </div>
+          <div
+            id="agents"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#efefef] py-[70px] px-[12px] lg:px-0">
+      <div class="container lg:flex items-center justify-between">
+        <div class="mb-[40px]">
+          <h3 class="text-[#00204a] text-[12px] mb-[15px] uppercase font-bold">
+            Contact
+          </h3>
+          <ul>
+            <address class="text-[#888888] mb-[10px] text-[14px]">
+              43 Raymouth Rd. Baltemoer, London 3910
+            </address>
+            <li class="mb-[10px]">
+              <a
+                href=""
+                class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                >+1(123)-456-7890</a
+              >
+            </li>
+            <li class="mb-[10px]">
+              <a
+                href=""
+                class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                >+1(123)-456-7890</a
+              >
+            </li>
+            <li class="mb-[10px]">
+              <a
+                href=""
+                class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                >info@mydomain.com</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="mb-[40px]">
+          <h3 class="text-[#00204a] text-[12px] mb-[15px] uppercase font-bold">
+            Sources
+          </h3>
+          <div class="flex items-center gap-15">
+            <ul>
+              <li class="mb-[10px]">
+                <a
+                  href=""
+                  class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                  >About Us</a
+                >
+              </li>
+              <li class="mb-[10px]">
+                <a
+                  href=""
+                  class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                  >Services</a
+                >
+              </li>
+              <li class="mb-[10px]">
+                <a
+                  href=""
+                  class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                  >Vision</a
+                >
+              </li>
+              <li class="mb-[10px]">
+                <a
+                  href=""
+                  class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                  >Mission</a
+                >
+              </li>
+              <li class="mb-[10px]">
+                <a
+                  href=""
+                  class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                  >Terms</a
+                >
+              </li>
+              <li class="mb-[10px]">
+                <a
+                  href=""
+                  class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                  >Privacy</a
+                >
+              </li>
+            </ul>
+            <ul>
+              <li class="mb-[10px]">
+                <a
+                  href=""
+                  class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                  >Partners</a
+                >
+              </li>
+              <li class="mb-[10px]">
+                <a
+                  href=""
+                  class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                  >Business</a
+                >
+              </li>
+              <li class="mb-[10px]">
+                <a
+                  href=""
+                  class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                  >Careers</a
+                >
+              </li>
+              <li class="mb-[10px]">
+                <a
+                  href=""
+                  class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                  >Blog</a
+                >
+              </li>
+              <li class="mb-[10px]">
+                <a
+                  href=""
+                  class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                  >FAQ</a
+                >
+              </li>
+              <li class="mb-[10px]">
+                <a
+                  href=""
+                  class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                  >Creative</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mb-[40px]">
+          <h3 class="text-[#00204a] text-[12px] mb-[15px] uppercase font-bold">
+            Links
+          </h3>
+          <ul>
+            <li class="mb-[10px]">
+              <a
+                href=""
+                class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                >Our Vision</a
+              >
+            </li>
+            <li class="mb-[10px]">
+              <a
+                href=""
+                class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                >About us</a
+              >
+            </li>
+            <li class="mb-[10px]">
+              <a
+                href=""
+                class="text-[#888888] text-[14px] underline duration-200 hover:text-black hover:no-underline"
+                >Contact us</a
+              >
+            </li>
+          </ul>
+          <ul class="flex items-center gap-2 mb-[40px]">
+            <li>
+              <a
+                href=""
+                class="bg-[#ccc] w-[40px] h-[40px] hover:bg-[#00204a] rounded-2xl flex items-center justify-center text-white transition duration-300 hover:-translate-y-1"
+                ><i
+                  class="fa-brands fa-instagram text-[#888] hover:text-white"
+                ></i
+              ></a>
+            </li>
+            <li class="">
+              <a
+                href=""
+                class="bg-[#ccc] w-[40px] h-[40px] hover:bg-[#00204a] rounded-2xl flex items-center justify-center text-white transition duration-300 hover:-translate-y-1"
+                ><i
+                  class="fa-brands fa-twitter text-[#888] hover:text-white"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href=""
+                class="bg-[#ccc] w-[40px] h-[40px] hover:bg-[#00204a] rounded-2xl flex items-center justify-center text-white transition duration-300 hover:-translate-y-1"
+                ><i
+                  class="fa-brands fa-facebook-f text-[#888] hover:text-white"
+                ></i
+              ></a>
+            </li>
+            <li class="">
+              <a
+                href=""
+                class="bg-[#ccc] w-[40px] h-[40px] hover:bg-[#00204a] rounded-2xl flex items-center justify-center text-white transition duration-300 hover:-translate-y-1"
+                ><i
+                  class="fa-brands fa-linkedin-in text-[#888] hover:text-white"
+                ></i
+              ></a>
+            </li>
+            <li class="">
+              <a
+                href=""
+                class="bg-[#ccc] w-[40px] h-[40px] hover:bg-[#00204a] rounded-2xl flex items-center justify-center text-white transition duration-300 hover:-translate-y-1"
+                ><i
+                  class="fa-brands fa-pinterest text-[#888] hover:text-white"
+                ></i
+              ></a>
+            </li>
+            <li class="">
+              <a
+                href=""
+                class="bg-[#ccc] w-[40px] h-[40px] hover:bg-[#00204a] rounded-2xl flex items-center justify-center text-white transition duration-300 hover:-translate-y-1"
+                ><i
+                  class="fa-brands fa-dribbble text-[#888] hover:text-white"
+                ></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-[#888] mb-[14px] text-[14px] text-center">
+        Copyright © 2026 . All Rights Reserved. — Designed with love by
+        <a href="" class="underline">Untree.co</a>
+      </p>
+      <p class="text-[#888] mb-[14px] text-[14px] text-center">
+        Distributed by <a href="" class="underline">themewagon</a>
+      </p>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="src/js/script.js"></script>
+  </body>
+</html>
