@@ -51,6 +51,16 @@ prev2.onclick = () => {
 
 setInterval(slideNext2, 3000);
 
+let productName = [
+  "Modern Villa California",
+  "Luxury Glass Residence",
+  "Poolside Family House",
+  "Sunset View Mansion",
+  "Urban Smart Home",
+  "Ocean Breeze Villa",
+  "Green Garden Residence",
+  "Golden Coast House",
+];
 let img = [
   "https://themewagon.github.io/property/images/img_1.jpg",
   "https://themewagon.github.io/property/images/img_2.jpg",
@@ -90,7 +100,7 @@ properties.innerHTML = img
                     5232 California Fake, Ave. 21BC
                   </p>
                   <h3 class="mb-[16px] text-[20px] font-bold">
-                    California, USA
+                   ${productName[i]}
                   </h3>
                   <div class="flex gap-2 text-[#7f7f7f] mb-[24px]">
                     <div>
@@ -111,6 +121,20 @@ properties.innerHTML = img
             </div>`,
   )
   .join("");
+
+function doSearch() {
+  const search = document.getElementById("search");
+  const ntc = document.getElementById("ntc");
+
+  const query = search.value.toLowerCase().trim();
+
+  const index = productName.findIndex((name) =>
+    name.toLowerCase().includes(query),
+  );
+
+  ntc.innerHTML = index !== -1 ? `Found: ${productName[index]}` : "Not found";
+  search.value = "";
+}
 
 let img2 = [
   "src/img/new.png",
